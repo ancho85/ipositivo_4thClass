@@ -5,7 +5,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "jsapp/template-blank-cordova-project-lite/sample.zip",
       "projectGuid": "ac28c42f-51e9-43cb-807b-5d3bf3b99046",
-      "lastModifiedDate": 1469058127405,
+      "lastModifiedDate": 1469059299126,
       "creationDate": 1469058040973
     },
     "XDK-app-designer": "false",
@@ -124,7 +124,7 @@
         "appName_": "4thClass-Cordova",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -138,7 +138,8 @@
             "itms:*",
             "itms-apps:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
@@ -164,7 +165,7 @@
         "appName_": "4thClass-Cordova",
         "appID_": "xdk.intel.cordova.template.lite",
         "appAccess_": {
-          "mode": "legacy",
+          "mode": "whitelist",
           "network": [
             "*"
           ],
@@ -176,7 +177,8 @@
             "mailto:*",
             "geo:*"
           ],
-          "navigation": []
+          "navigation": [],
+          "properties": {}
         },
         "icons_": [],
         "splashes_": [],
