@@ -28,6 +28,8 @@
 // This example is calling the standard Cordova "hide splashscreen" function.
 // You can add other code to it or add additional functions that are triggered
 // by the same event or other events.
+var pictureSource;
+var destinationType;
 
 function onAppReady() {
     if( navigator.splashscreen && navigator.splashscreen.hide ) {   // Cordova API detected
@@ -39,6 +41,9 @@ function onAppReady() {
                         'Device Platform: ' + device.platform + "<br/>" + 
                         'Device UUID: ' + device.uuid + "<br/>" + 
                         'Device Version: ' + device.version + "<br/>";
+    
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
 }
 document.addEventListener("app.Ready", onAppReady, false) ;
 // document.addEventListener("deviceready", onAppReady, false) ;
@@ -54,3 +59,20 @@ document.addEventListener("app.Ready", onAppReady, false) ;
 
 // NOTE: change "dev.LOG" in "init-dev.js" to "true" to enable some console.log
 // messages that can help you debug Cordova app initialization issues.
+
+function onPhotoDataSuccess(imageData){
+    var smallImage = document.getElementById("smallImage");
+    smallImage.style.display = "block";
+    smallImage.src = "data:image/jpeg;base64," + imageData;
+}
+
+function capturePhoto(){
+    navigator.camera.getPicture(onPhotoDataSuccess, onFail, 
+                                {quality:50, destinationType: destinationType.DATA_URL});
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
+}
+
+function onFail(message){
+    alert("Error debido a:" + message);
+}
